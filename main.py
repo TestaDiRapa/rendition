@@ -1,6 +1,6 @@
-from sheet_parser import SpicySoup
+from character import Character
 
 if __name__ == "__main__":
     html = open("test.html", "r").read()
-    soup = SpicySoup(html)
-    print(soup.get_spellcasting_info())
+    c = Character(html)
+    c.save_to_txt()

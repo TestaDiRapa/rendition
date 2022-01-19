@@ -69,7 +69,7 @@ class SpicySoup:
     def __get_list_attribute(self, selector: string):
         attr = self.__get_attribute(selector)
         if attr is not None:
-            return attr.split(',')
+            return [a.strip() for a in attr.split(',')]
         return None    
 
     def __parse_action(self, action: bs4.element.Tag):
@@ -140,7 +140,7 @@ class SpicySoup:
         prof = dict()
         for score in ["str", "dex", "con", "int", "wis","cha"]:
             s = self.__get_attribute(f"span[name='attr_npc_{score}_save']")
-            prof[score] = 0 if s is None else int(s)
+            prof[score] = 0 if s is None or s.startswith('@') else int(s)
         return prof
 
     def get_skill_prof(self):
@@ -150,9 +150,9 @@ class SpicySoup:
         skills = ["acrobatics", "animal_handling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medicine", "nature",
                     "perception", "performance", "persuasion", "religion", "sleight_of_hand", "stealth", "survival"]
         prof = dict()
-        for s in skills:
-            s = self.__get_attribute((f"span[name='attr_npc_{s}']"))
-            prof[s] = 0 if s is None or s.startswith('@') else int(s)
+        for skill in skills:
+            s = self.__get_attribute((f"span[name='attr_npc_{skill}']"))
+            prof[skill] = 0 if s is None or s.startswith('@') else int(s)
         return prof
 
     def get_vulnerabilitites(self):
@@ -197,6 +197,7 @@ class SpicySoup:
         '''
         cr = self.__get_attribute(f"span[name='attr_npc_challenge']")
         exp = self.__get_attribute(f"span[name='attr_npc_xp']")
+        return cr, exp
 
     def get_traits(self):
         '''

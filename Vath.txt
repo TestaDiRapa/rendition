@@ -1,0 +1,167 @@
+Vath - umanoide medio, LM
+IMAGE: https://s3.amazonaws.com/files.d20.io/images/244449916/hhxE766hxGpeBa-qDJDrbA/med.png?1631290092
+--------------------------
+ARMOR:	18 (Armatura Sudded Leather +1)
+HIT POINTS:	144 (16d8+64)
+SPEED:
+	40 ft.
+--------------------------
+ABILITY SCORES
+strength	8
+dexterity	20
+constitution	19
+intelligence	19
+wisdom	20
+charisma	8
+--------------------------
+SAVING THROWS
+	dex:	10
+	int:	9
+	wis:	10
+SKILLS
+	acrobatics:	15
+	arcana:	9
+	history:	10
+	insight:	15
+	investigation:	15
+	medicine:	10
+	nature:	10
+	perception:	20
+	religion:	10
+	stealth:	10
+VULNERABILITIES:
+	fire
+RESISTANCES:
+	cold
+IMMUNITIES:
+	lightining
+	charmed
+CONDITION IMMUNITIES:
+	meta
+SENSES:
+	Drakvision 60ft
+	Blindsight 10 ft
+	PP 30
+LANGUAGES:
+	Comune
+	Elfico
+	Nanico
+	Dragonico
+	Sottocomune
+	Ladresco
+CHALLENGE:  ( XP)
+--------------------------
+TRAITS
+	Musica al sapore di metaplay
+	Quando Vath entra in campo la musica cambia
+https://www.youtube.com/watch?v=gt89f7EUMFw&t=20s
+
+	Attacco Furtivo (1/Turno)
+	Vath infligge danni extra pari a 28 (8d6) danni quando colpisce un bersaglio con un attacco con arma e ha vantaggio al tiro per colpire, oppure quando un alleato è entro 1,5 m (5 ft) da lui e quel bersaglio non è incapacitato.
+Vath non applica questi danni se ha svantaggio al tiro per colpire.
+
+	Elusione
+	Quando Vath è soggetto a un effetto che gli consente di effettuare un tiro salvezza su Destrezza per dimezzare i danni, non subisce alcun danno se supera il tiro salvezza, e soltanto la metà dei danni se lo fallisce. 
+
+	Percezione Sopra Le Righe Al Limite Del Divino
+	Vath ha vantaggio a tutti i tiri abilità di Indagare, Intuizione e Percezione.
+Non importa se una creatura è nascosta. Vath la vede sempre.
+
+	Meta a Cuore Greve
+	Vath sa quando sta per morire: per questo si nasconde sempre in tasca una contingenza con dimensional door per darsela di culo.
+Il meta di Vath gli permette di scappare sempre in automatico prima di morire.
+Esattamente un istante prima.. toh: guarda che fortuna sfacciata!
+
+--------------------------
+ACTIONS
+	Arco Lungo dello Japachi
+	Ranged, +14, 100, 600, un bersaglio, 
+	13 (1d8+9) damage plus 12 (2d6+5) boh damage
+	txt
+
+	Attacco Furtivo
+	Melee, +0, 
+	28 (8d6) damage
+	Vath può applicare questi danni solo una volta a turno.
+
+	Stocco
+	Melee, +13, 5, un bersaglio, 
+	11 (1d8+7) perforanti damage
+	
+
+	Questa abilità fa danno
+	Melee, +0, 
+	10 (3d6) danni damage
+	Descrizione
+
+--------------------------
+BONUS ACTIONS
+	Arco Lungo dello Japachi
+	Ranged, +14, 100, 600, un bersaglio, 
+	13 (1d8+9) damage plus 12 (2d6+5) boh damage
+	txt
+
+	Attacco Furtivo
+	Melee, +0, 
+	28 (8d6) damage
+	Vath può applicare questi danni solo una volta a turno.
+
+	Stocco
+	Melee, +13, 5, un bersaglio, 
+	11 (1d8+7) perforanti damage
+	
+
+	Questa abilità fa danno
+	Melee, +0, 
+	10 (3d6) danni damage
+	Descrizione
+
+--------------------------
+REACTIONS
+	Schivata Prodigiosa
+	Quando un attaccante che Vath è in grado di vedere lo colpisce con un attacco, Vath può usare la sua reazione per dimezzare i danni che subirebbe dall'attacco. 
+
+--------------------------
+LEGENDARY ACTIONS
+Vath has 3 legendary actions each turn
+	Azione leggendaria 1
+	Melee, +0, 
+	Test
+
+	aaaa
+	Melee, +6, 
+	5 (1d10) f1re damage plus 6 (2d5) damage
+	
+
+--------------------------
+MYTHIC ACTIONS
+Vath triggers the mythic actions when Boh ciao
+	Test mythic
+	Melee, +0, 
+	
+
+--------------------------
+SPELLCASTING
+CD: 16
+TxC: 7
+Cantrips:
+	Acid Splash
+Level 1 (4 slots):
+	Animal Friendship
+Level 2 (3 slots):
+	Acid Arrow
+Level 3 (3 slots):
+	Animate Dead
+Level 4 (3 slots):
+	Arcane Eye
+Level 5 (2 slots):
+	Antilife Shell
+Level 6 (1 slots):
+	Chain Lightning
+Level 7 (1 slots):
+	Delayed Blast Fireball
+Level 8 (1 slots):
+	Animal Shapes
+	Antimagic Field
+Level 9 (1 slots):
+	Wish
