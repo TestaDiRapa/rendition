@@ -1,10 +1,9 @@
-<html>
-    <head>
+<html><head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="/css/themes/bootstrap/jquery-ui-1.8.16.custom.css?1636476831">
-    <link rel="stylesheet" type="text/css" href="/assets/base.css?1641487769">
-    <!-- <link rel='stylesheet' type='text/css' href='/assets/app.css?1641487769' /> -->
-    <link rel="stylesheet" type="text/css" href="/css/charsheet.css?1637254378">
+    <link rel="stylesheet" type="text/css" href="/css/themes/bootstrap/jquery-ui-1.8.16.custom.css?1642537978">
+    <link rel="stylesheet" type="text/css" href="/assets/base.css?1642537980">
+    <!-- <link rel='stylesheet' type='text/css' href='/assets/app.css?1642537978' /> -->
+    <link rel="stylesheet" type="text/css" href="/css/charsheet.css?1642537978">
 
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Contrail+One|Shadows+Into+Light|Candal&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
@@ -14,12 +13,12 @@
         };
         window.d20 = d20;
     </script>
-    <script type="text/javascript" src="/v2/js/jquery-1.9.1.js?1636476832" "=""></script>
-    <script type="text/javascript" src="/js/jquery-ui.1.9.0.custom.min.js?1636476831"></script>
-    <script type="text/javascript" src="/js/jquery.ui.touch.js?1636476831"></script>
+    <script type="text/javascript" src="/v2/js/jquery-1.9.1.js?1642537980" "=""></script>
+    <script type="text/javascript" src="/js/jquery-ui.1.9.0.custom.min.js?1642537979"></script>
+    <script type="text/javascript" src="/js/jquery.ui.touch.js?1642537979"></script>
 
-    <script type="text/javascript" src="/js/d20/charsheetjs/view/attribute_tab.js?1636476831"></script>
-    <script type="text/javascript" src="/js/d20/charsheetjs/view/draggables.js?1637254378"></script>
+    <script type="text/javascript" src="/js/d20/charsheetjs/view/attribute_tab.js?1642537979"></script>
+    <script type="text/javascript" src="/js/d20/charsheetjs/view/draggables.js?1642537979"></script>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
@@ -14077,7 +14076,7 @@ color: red;
 
 
 </style></head>
-<body data-new-gr-c-s-check-loaded="14.1044.0" data-gr-ext-installed="" data-gr-ext-disabled="forever">
+<body data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed="" data-gr-ext-disabled="forever">
     <div id="dialog-window" class="ui-dialog" aria-live="polite" aria-relevant="all">
         
         <div class="dialog largedialog characterviewer" style="display: block;">
@@ -14501,14 +14500,14 @@ color: red;
               <input class="flag" type="hidden" name="attr_npc_survival_flag" value="0">
               <button type="roll" name="roll_npc_survival" value="@{wtype}&amp;{template:npc} @{npc_name_flag} {{rname=^{survival}}} {{mod=@{npc_survival}}} {{r1=[[@{d20}+@{npc_survival}]]}} @{rtype}+@{npc_survival}]]}} {{type=Skill}}" class="btn ui-draggable"><span data-i18n="survival">Survival</span><span class="stat" name="attr_npc_survival">@{wisdom_mod}</span></button></span>
     </div>
-    <input class="flag" type="hidden" name="attr_npc_vulnerabilities">
-    <div class="row status vulnerabilities red"><span class="bold" data-i18n="dmg-vuln">Damage Vulnerabilities</span><span class="info" name="attr_npc_vulnerabilities"></span></div>
-    <input class="flag" type="hidden" name="attr_npc_resistances">
-    <div class="row status resistances red"><span class="bold" data-i18n="dmg-res">Damage Resistances</span><span class="info" name="attr_npc_resistances"></span></div>
-    <input class="flag" type="hidden" name="attr_npc_immunities">
-    <div class="row status immunities red"><span class="bold" data-i18n="dmg-imm">Damage Immunities</span><span class="info" name="attr_npc_immunities"></span></div>
-    <input class="flag" type="hidden" name="attr_npc_condition_immunities">
-    <div class="row status condition_immunities red"><span class="bold" data-i18n="cond-imm">Condition Immunities</span><span class="info" name="attr_npc_condition_immunities"></span></div>
+    <input class="flag" type="hidden" name="attr_npc_vulnerabilities" value="fire">
+    <div class="row status vulnerabilities red"><span class="bold" data-i18n="dmg-vuln">Damage Vulnerabilities</span><span class="info" name="attr_npc_vulnerabilities">fire</span></div>
+    <input class="flag" type="hidden" name="attr_npc_resistances" value="cold">
+    <div class="row status resistances red"><span class="bold" data-i18n="dmg-res">Damage Resistances</span><span class="info" name="attr_npc_resistances">cold</span></div>
+    <input class="flag" type="hidden" name="attr_npc_immunities" value="lightining, charmed">
+    <div class="row status immunities red"><span class="bold" data-i18n="dmg-imm">Damage Immunities</span><span class="info" name="attr_npc_immunities">lightining, charmed</span></div>
+    <input class="flag" type="hidden" name="attr_npc_condition_immunities" value="meta">
+    <div class="row status condition_immunities red"><span class="bold" data-i18n="cond-imm">Condition Immunities</span><span class="info" name="attr_npc_condition_immunities">meta</span></div>
     <div class="row senses red"><span class="bold" data-i18n="senses">Senses</span><span class="info" name="attr_npc_senses">Drakvision 60ft, Blindsight 10 ft, PP 30</span></div>
     <div class="row languages red"><span class="bold" data-i18n="langs">Languages</span><span class="info languages" name="attr_npc_languages" value="—">Comune, Elfico, Nanico, Dragonico, Sottocomune, Ladresco</span></div>
     <div class="row red"><span class="bold" data-i18n="challenge">Challenge</span><span class="num" name="attr_npc_challenge"></span><span class="parens xp info" name="attr_npc_xp"></span></div>
@@ -14710,7 +14709,7 @@ Esattamente un istante prima.. toh: guarda che fortuna sfacciata!</span>
             <input type="text" name="attr_attack_tohit" value="0" placeholder="5" style="width: 30px;"><span style="margin-left: 15px;" data-i18n="target:-u">TARGET:</span>
             <input type="text" name="attr_attack_target" placeholder="One target" style="width: 100px;" data-i18n-placeholder="to-hit-place">
           </div>
-          <input type="hidden" name="attr_damage_flag" value="{{damage=1}} {{dmg1flag=1}} ">
+          <input type="hidden" name="attr_damage_flag" value="{{damage=1}} {{dmg1flag=1}} {{dmg2flag=1}} ">
           <div class="row attack_option"><span data-i18n="on-hit:-u">ON HIT:</span>
             <input type="text" name="attr_attack_damage" placeholder="1d10" style="width: 65px;">
             <input type="text" name="attr_attack_damagetype" placeholder="slashing" style="width: 100px;" data-i18n-placeholder="on-hit-place">
@@ -14719,7 +14718,7 @@ Esattamente un istante prima.. toh: guarda che fortuna sfacciata!</span>
           <div class="row attack_option"><span data-i18n="on-hit2:-u">ON HIT 2:</span>
             <input type="text" name="attr_attack_damage2" placeholder="2d6+5" style="width: 65px;">
             <input type="text" name="attr_attack_damagetype2" placeholder="fire" style="width: 100px;" data-i18n-placeholder="on-hit-2-place">
-            <input type="hidden" name="attr_attack_crit2">
+            <input type="hidden" name="attr_attack_crit2" value="2d6">
           </div>
           <div class="row attack_option"><span data-i18n="desc:-u">DESCRIPTION:</span>
             <select name="attr_show_desc">
@@ -14741,8 +14740,8 @@ Esattamente un istante prima.. toh: guarda che fortuna sfacciata!</span>
             <div class="row wide"><span class="bold wide" name="attr_name">Arco Lungo dello Japachi</span></div>
           </button>
           <input class="attack_options" type="hidden" name="attr_attack_flag" value="on">
-          <div class="row attack attack_option"><span class="italics" name="attr_attack_type">Ranged</span><span class="italics"> Weapon Attack:</span><span name="attr_attack_tohitrange">+14, Range 150/600, un bersaglio</span></div>
-          <div class="row attack attack_option"><span class="italics" style="font-size: 13px; font-weight: normal; vertical-align: middle;" data-i18n="hit:">Hit: </span><span name="attr_attack_onhit" style="vertical-align: middle;">13 (1d8+9) perforanti damage</span></div><span class="description" name="attr_description"></span>
+          <div class="row attack attack_option"><span class="italics" name="attr_attack_type">Ranged</span><span class="italics"> Weapon Attack:</span><span name="attr_attack_tohitrange">+14, Range 100/600, un bersaglio</span></div>
+          <div class="row attack attack_option"><span class="italics" style="font-size: 13px; font-weight: normal; vertical-align: middle;" data-i18n="hit:">Hit: </span><span name="attr_attack_onhit" style="vertical-align: middle;">13 (1d8+9) damage plus 12 (2d6+5) boh damage</span></div><span class="description" name="attr_description">txt</span>
         </div>
         <input type="hidden" name="attr_rollbase" value="@{wtype}&amp;{template:npcfullatk} {{attack=1}} @{damage_flag} @{npc_name_flag} {{rname=@{name}}} {{r1=[[@{d20}+(@{attack_tohit}+0)]]}} @{rtype}+(@{attack_tohit}+0)]]}} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}} {{crit1=[[@{attack_crit}+0]]}} {{crit2=[[@{attack_crit2}+0]]}} {{description=@{show_desc}}} @{charname_output}">
         <button type="roll" style="display: none;" name="roll_npc_dmg" value="@{wtype}&amp;{template:npcdmg} @{damage_flag} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}} {{description=@{show_desc}}}" class="btn ui-draggable"></button>
@@ -15330,6 +15329,61 @@ Questo beneficio dura per un minuto o finchè Vath non lo usa su un nuovo bersag
           <div class="row attack attack_option"><span class="italics" style="font-size: 13px; font-weight: normal; vertical-align: middle;" data-i18n="hit:">Hit: </span><span name="attr_attack_onhit" style="vertical-align: middle;"></span></div><span class="description" name="attr_description">Test</span>
         </div>
         <input type="hidden" name="attr_rollbase" value="@{wtype}&amp;{template:npcaction} @{npc_name_flag} {{rname=@{name}}} {{description=@{show_desc}}} @{charname_output}">
+        <button type="roll" style="display: none;" name="roll_npc_dmg" value="@{wtype}&amp;{template:npcdmg} @{damage_flag} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}}" class="btn ui-draggable"></button>
+        <button type="roll" style="display: none;" name="roll_npc_crit" value="@{wtype}&amp;{template:npcdmg} @{damage_flag} {{crit=1}} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}} {{crit1=[[@{attack_crit}+0]]}} {{crit2=[[@{attack_crit2}+0]]}}" class="btn ui-draggable"></button>
+      </div>
+    </div><div class="repitem" data-reprowid="-MtmhC6AqgQ1eezgqI1y"><div class="itemcontrol"><button class="btn btn-danger pictos repcontrol_del">#</button><a class="btn repcontrol_move">≡</a></div>
+      <div class="action"><span class="editing-repeating" name="attr_name">aaaa</span>
+              <button class="toggle_repeating_npcaction-l_edit npc_options-flag" type="action" name="act_edit"></button><span>y</span>
+        <div class="npc_options">
+          <div class="row"><span data-i18n="name:-u">NAME:</span>
+            <input type="text" name="attr_name">
+          </div>
+          <div class="row">
+            <input type="checkbox" name="attr_attack_flag" value="on"><span data-i18n="attack-u">ATTACK</span>
+          </div>
+          <input class="attack_options" type="hidden" name="attr_attack_flag" value="on">
+          <div class="row attack_option"><span data-i18n="type:-u">TYPE:</span>
+            <select name="attr_attack_type">
+              <option value="Melee" data-i18n="melee">Melee</option>
+              <option value="Ranged" data-i18n="ranged">Ranged</option>
+            </select><span style="margin-left: 15px;" data-i18n="range-reach:-u">RANGE/REACH:</span>
+            <input type="text" name="attr_attack_range" placeholder="5 ft." style="width: 100px;" data-i18n-placeholder="range-reach-place">
+          </div>
+          <div class="row attack_option"><span data-i18n="to-hit:-u">TO HIT:</span>
+            <input type="text" name="attr_attack_tohit" value="0" placeholder="5" style="width: 30px;"><span style="margin-left: 15px;" data-i18n="target:-u">TARGET:</span>
+            <input type="text" name="attr_attack_target" placeholder="One target" style="width: 100px;" data-i18n-placeholder="to-hit-place">
+          </div>
+          <input type="hidden" name="attr_damage_flag" value="{{damage=1}} {{dmg1flag=1}} {{dmg2flag=1}} ">
+          <div class="row attack_option"><span data-i18n="on-hit:-u">ON HIT:</span>
+            <input type="text" name="attr_attack_damage" placeholder="1d10" style="width: 65px;">
+            <input type="text" name="attr_attack_damagetype" placeholder="slashing" style="width: 100px;" data-i18n-placeholder="on-hit-place">
+            <input type="hidden" name="attr_attack_crit" value="1d10">
+          </div>
+          <div class="row attack_option"><span data-i18n="on-hit2:-u">ON HIT 2:</span>
+            <input type="text" name="attr_attack_damage2" placeholder="2d6+5" style="width: 65px;">
+            <input type="text" name="attr_attack_damagetype2" placeholder="fire" style="width: 100px;" data-i18n-placeholder="on-hit-2-place">
+            <input type="hidden" name="attr_attack_crit2" value="2d5">
+          </div>
+          <div class="row attack_option"><span data-i18n="desc:-u">DESCRIPTION:</span>
+            <select name="attr_show_desc">
+              <option value="@{description}" data-i18n="show">Show</option>
+              <option value=" " data-i18n="hide">Hide</option>
+            </select>
+          </div>
+          <div class="row">
+            <textarea name="attr_description"></textarea>
+          </div>
+        </div>
+        <div class="display">
+          <button class="pick btn ui-draggable" type="roll" name="roll_npc_action" value="@{rollbase}">
+            <div class="row wide"><span class="bold wide" name="attr_name">aaaa</span></div>
+          </button>
+          <input class="attack_options" type="hidden" name="attr_attack_flag" value="on">
+          <div class="row attack attack_option"><span class="italics" name="attr_attack_type">Melee</span><span class="italics"> Weapon Attack:</span><span name="attr_attack_tohitrange">+6</span></div>
+          <div class="row attack attack_option"><span class="italics" style="font-size: 13px; font-weight: normal; vertical-align: middle;" data-i18n="hit:">Hit: </span><span name="attr_attack_onhit" style="vertical-align: middle;">5 (1d10) f1re damage plus 6 (2d5) damage</span></div><span class="description" name="attr_description"></span>
+        </div>
+        <input type="hidden" name="attr_rollbase" value="@{wtype}&amp;{template:npcfullatk} {{attack=1}} @{damage_flag} @{npc_name_flag} {{rname=@{name}}} {{r1=[[@{d20}+(@{attack_tohit}+0)]]}} @{rtype}+(@{attack_tohit}+0)]]}} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}} {{crit1=[[@{attack_crit}+0]]}} {{crit2=[[@{attack_crit2}+0]]}} {{description=@{show_desc}}} @{charname_output}">
         <button type="roll" style="display: none;" name="roll_npc_dmg" value="@{wtype}&amp;{template:npcdmg} @{damage_flag} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}}" class="btn ui-draggable"></button>
         <button type="roll" style="display: none;" name="roll_npc_crit" value="@{wtype}&amp;{template:npcdmg} @{damage_flag} {{crit=1}} {{dmg1=[[@{attack_damage}+0]]}} {{dmg1type=@{attack_damagetype}}} {{dmg2=[[@{attack_damage2}+0]]}} {{dmg2type=@{attack_damagetype2}}} {{crit1=[[@{attack_crit}+0]]}} {{crit2=[[@{attack_crit2}+0]]}}" class="btn ui-draggable"></button>
       </div>
@@ -21815,10 +21869,10 @@ Questo beneficio dura per un minuto o finchè Vath non lo usa su un nuovo bersag
     </div>
   </div>
 </div>
-<input accept="Category" name="attr_drop_category" type="hidden" value="">
-<input accept="Name" name="attr_drop_name" type="hidden" value="">
-<input accept="data" name="attr_drop_data" type="hidden" value="">
-<input accept="Content" name="attr_drop_content" type="hidden" value="">
+<input accept="Category" name="attr_drop_category" type="hidden">
+<input accept="Name" name="attr_drop_name" type="hidden">
+<input accept="data" name="attr_drop_data" type="hidden">
+<input accept="Content" name="attr_drop_content" type="hidden">
 </div><input type="hidden" name="attr_d20" value="1d20">
 <input type="hidden" name="attr_level" value="17">
 <input type="hidden" name="attr_pb" value="2">
@@ -22056,5 +22110,4 @@ Questo beneficio dura per un minuto o finchè Vath non lo usa su un nuovo bersag
     });
 </script>
 
-</body>
-</html>
+</body></html>
