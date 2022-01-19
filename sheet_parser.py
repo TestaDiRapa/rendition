@@ -1,4 +1,6 @@
+import bs4
 import re
+import string
 from bs4 import BeautifulSoup
 
 def parse_single_option(option):
@@ -54,21 +56,39 @@ def parse_damage(damage_string):
 
 class SpicySoup:
 
-    def __init__(self, html, parser='lxml'):
+    def __init__(self, html: string, parser='lxml'):
         self.soup = BeautifulSoup(html, parser)
     
-    def __get_attribute(self, selector):
+    def __get_attribute(self, selector: string):
         tags = self.soup.select(selector)
         if len(tags) == 0:
             return None
         else:
             return tags[0].text
 
-    def __get_list_attribute(self, selector):
+    def __get_list_attribute(self, selector: string):
         attr = self.__get_attribute(selector)
         if attr is not None:
             return attr.split(',')
         return None    
+
+    def __parse_action(self, action: bs4.element.Tag):
+        if action.find("span", {"name": "attr_name"}).text:
+            return {
+                "name": action.find("span", {"name": "attr_name"}).text,
+                "type": action.find("span", {"name": "attr_attack_type"}).text,
+                "mods": parse_attack_options(action.find("span", {"name": "attr_attack_tohitrange"}).text),
+                "dmg": parse_damage(action.find("span", {"name": "attr_attack_onhit"}).text),
+                "description": action.find("span", {"name": "attr_description"}).text
+            }
+
+    def __parse_traits(self, trait: bs4.element.Tag):
+        name = trait.find("span", {"name": "attr_name"}).text
+        if name is not None and name != "":
+            return {
+                "name": name,
+                "description": trait.find("span", {"name": "attr_description"}).text
+            }
 
     def get_name(self):
         '''
@@ -184,12 +204,9 @@ class SpicySoup:
         '''
         ret = list()
         for el in self.soup.select("div.row.traits div.trait"):
-            name = el.find("span", {"name": "attr_name"}).text
-            if name is not None and name != "":
-                ret.append({
-                    "name": name,
-                    "description": el.find("span", {"name": "attr_description"}).text
-                })
+            trait = self.__parse_traits(el)
+            if trait is not None:
+                ret.append(trait)
         return ret
 
     def get_actions(self):
@@ -198,12 +215,84 @@ class SpicySoup:
         '''
         ret = list()
         for el in self.soup.select("div.row.actions:not(.bonusactions):not(.reaction):not(.legendary):not(.mythic) div.action"):
-            if el.find("span", {"name": "attr_name"}).text:
-                ret.append({
-                    "name": el.find("span", {"name": "attr_name"}).text,
-                    "type": el.find("span", {"name": "attr_attack_type"}).text,
-                    "mods": parse_attack_options(el.find("span", {"name": "attr_attack_tohitrange"}).text),
-                    "dmg": parse_damage(el.find("span", {"name": "attr_attack_onhit"}).text),
-                    "description": el.find("span", {"name": "attr_description"}).text
-                })
+            action = self.__parse_action(el)
+            if action is not None:
+                ret.append(action)
         return ret
+
+    def get_bonus_actions(self):
+        '''
+        Gets all the bonus actions with their description
+        '''
+        ret = list()
+        for el in self.soup.select("div.row.actions.bonusactions div.action"):
+            action = self.__parse_action(el)
+            if action is not None:
+                ret.append(action)
+        return ret
+
+    def get_reactions(self):
+        '''
+        Gets all the reactions with their description
+        '''
+        ret = list()
+        for el in self.soup.select("div.row.actions.reaction div.trait"):
+            trait = self.__parse_traits(el)
+            if trait is not None:
+                ret.append(trait)
+        return ret
+
+    def get_legendary_actions(self):
+        '''
+        Gets all the legendary actions with their description
+        '''
+        ret = {
+            "total": self.__get_attribute("span[name='attr_npc_legendary_actions']"),
+            "actions": []
+        }
+        for el in self.soup.select("div.row.actions.legendary div.action"):
+            action = self.__parse_action(el)
+            if action is not None:
+                ret["actions"].append(action)
+        return ret
+
+    def get_mythic_actions(self):
+        '''
+        Gets all the mythic actions with their description
+        '''
+        ret = {
+            "trigger": self.__get_attribute("span[name='attr_npc_mythic_actions_desc']"),
+            "actions": []
+        }
+        for el in self.soup.select("div.row.actions.mythic div.action"):
+            action = self.__parse_action(el)
+            if action is not None:
+                ret["actions"].append(action)
+        return ret
+
+    def get_spellcasting_info(self):
+        '''
+        Gets all the spellcasting info
+        '''
+        ret = {
+            "dc": self.soup.select_one("input[name='attr_spell_save_dc']").get("value"),
+            "txc": self.soup.select_one("input[name='attr_spell_attack_bonus']").get("value"),
+            "cantrips": set()
+        }
+        spells = self.soup.select("div.spell-container")
+        for c in spells[0].find_all("span", {"name": "attr_spellname"}):
+            if c.text != "":
+                ret["cantrips"].add(c.text)
+
+        for i in range(1, 10):
+            ret[f"level-{i}"] = dict()
+            ret[f"level-{i}"]["slots"] = self.soup.select_one(f"input[name='attr_lvl{i}_slots_total']").get("value")
+            ret[f"level-{i}"]["spells"] = set()
+
+            for s in spells[i].find_all("span", {"name": "attr_spellname"}):
+                if s.text != "":
+                    ret[f"level-{i}"]["spells"].add(s.text)
+        return ret
+
+    def get_img(self):
+        return self.soup.select_one("div#bio-avatar > img").get("src")
